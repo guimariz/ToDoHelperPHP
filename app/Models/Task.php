@@ -9,5 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['task_name', 'status', 'open', 'task_start', 'task_final', 'task_timer', 'rest_timer', 'is_ready'];
+    protected $fillable = [
+        'taskName', 'status', 'open', 'taskStart', 'taskFinal', 'taskTimer', 'restTimer', 'isReady'
+    ];
 }

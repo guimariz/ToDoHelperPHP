@@ -23,7 +23,12 @@ Route::get('/', 'App\Http\Controllers\Api\TaskController@index');
 
 Route::prefix('tasks')->group(function () {
     Route::get('/', 'App\Http\Controllers\Api\TaskController@index')->name('get_tasks');
-    Route::get('/{id}', 'App\Http\Controllers\Api\TaskController@show')->name('single_task');
+    Route::get('/{id}', 'App\Http\Controllers\Api\TaskController@show')->name('single_tasks');
+    Route::get('/done', 'App\Http\Controllers\Api\TaskController@showDone', function () {
+    })->name('single_tasks');
 
     Route::post('/', 'App\Http\Controllers\Api\TaskController@store')->name('store_tasks');
+    Route::put('/{id}', 'App\Http\Controllers\Api\TaskController@update')->name('update_tasks');
+
+    Route::delete('/{id}', 'App\Http\Controllers\Api\TaskController@delete')->name('delete_tasks');
 });
